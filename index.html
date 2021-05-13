@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Art Galley</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="row">
+            <div class="link1"><a href="#">My Art</a></div>
+            <div class="link2"><a href="#">About</a> </div>
+        </div>
+        <div class="row">
+            <div class="col-6 left"><img src="images/jeremy-lishner-tKgcMR8saYA-unsplash.jpg" alt="image4"></div>
+
+            <div class="col-6 right"><img src="images/orlova-maria-bU8TeXhsPcY-unsplash.jpg" alt="image2"></div>
+
+            <div class="col-6 left"><img src="images/markus-spiske-k0rVudBoB4c-unsplash.jpg" alt="image3"></div>
+            <div class="col-6 right"><img src="images/omar-flores-lQT_bOWtysE-unsplash.jpg" alt="image1"></div>
+
+            <div class="col-6 right"><img src="images/tamara-menzi-n-vnWQmmVoY-unsplash.jpg" alt=""></div>
+            <div class="col-6 left"><img src="images/pop-zebra-oGpq6rMWyYQ-unsplash.jpg" alt=""></div>
+
+            <!-- <div class="col-6 right"><img src="images/vlad-kutepov-XU0YcfPXKI4-unsplash.jpg" alt=""></div> -->
+
+        </div>
+        <div class="container">
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <img src="images/ines-alvarez-fdez-hKug0W1tnVU-unsplash.jpg" alt="">
+                <div class="text">Caption Text</div>
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <img src="images/jung-ho-park-akxjN-Jk9Cs-unsplash.jpg" alt="">
+                <div class="text">Caption two</div>
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <img src="images/jacob-kiesow-zvv6F7EKNMg-unsplash.jpg" alt="">
+                <div class="text">Caption three</div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div style="text-align: center;">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+        <div id="about">
+            <h2>About</h2>
+            <div id="about-img"><img src="images/timon-klauser-3MAmj1ZKSZA-unsplash(1).jpg" alt=""></div>
+            <!-- <div id="about-text"> -->
+            <p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest of lorem ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum,
+                porta lectus vitae, ultricies congue gravida diam non fringilla. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+            <!-- </div> -->
+        </div>
+
+
+        <div id="contact">
+            <h2>Do not hesitate to contact me!</h2>
+            <form action="#">
+                <p>Name</p>
+                <input type="text">
+                <p>Email</p>
+                <input type="email">
+                <p>Message</p>
+                <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                <button>Send</button>
+            </form>
+        </div>
+
+    </div>
+    <footer>
+        <p>Created by <em><span>Hadis Ghafouri:)</span></em></p>
+    </footer>
+    <script>
+        var slidIndex = 1;
+        showSlides(slidIndex);
+
+        function plusSlides(n) {
+            showSlides(slidIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slidIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n < 1)
+                slidIndex = slides.length;
+            if (n > slides.length)
+                slidIndex = 1;
+            for (i = 0; i < slides.length; i++)
+                slides[i].style.display = "none";
+            for (i = 0; i < dots.length; i++)
+                dots[i].className = dots[i].className.replace(" active", "");
+            slides[slidIndex - 1].style.display = "block";
+            dots[slidIndex - 1].className += " active";
+        }
+    </script>
+</body>
+
+</html>
